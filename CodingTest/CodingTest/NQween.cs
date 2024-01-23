@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,36 +7,56 @@ using System.Threading.Tasks;
 
 namespace CodingTest
 {
-    internal class NQween
+    internal class NQweens
     {
-        internal class NQweens
+        public static void NQween(int n, int loop, int[] qweens, ref int result)
         {
-            public void NQweens(int n, int loop, int[] qweens, ref int result)
+            if (loop == n)
             {
-                if (loop == qweens.Length)
-                    return;
-                for (int i = loop; i < 0; i--)
-                {
-
-                }
+                Console.WriteLine(string.Join(", ", qweens));
+                result += 1;
+                return;
             }
-
-            public bool CanPlace(int[] qweens, int col)
+            for (int i = 0; i < n; i++)
             {
-                int row = 0;
-                for (int i = 0; i < qweens.Length; i++)
-                    if (qweens[i] == -1)
-                        row = i;
-                for (int i = 0; i < row; i++) 
+                if (qweens.Contains(i))
+                    continue;
+                if (CanPlace(qweens, i))
                 {
-                    if (qweens[i] == col)
-                        return false;
-                    if (((qweens[i] + 1) * col) == col)
-                        return false;
-                    if (((qweens[i] + 1))
+                    qweens[loop] = i;
+                    NQween(n, loop + 1, qweens, ref result);
                 }
+                qweens[loop] = -1;
+            }
+        }
+
+        public static bool CanPlace(int[] qweens, int col)
+        {
+            int row = 0;
+            if (qweens[0] == -1)
                 return true;
+            for (int i = 0; i < qweens.Length; i++)
+                if (qweens[i] == -1)
+                {
+                    row = i;
+                    break;
+                }
+            for (int i = 0; i < row; i++)
+            {
+                if (qweens[i] == col)
+                    return false;
+                if (col == qweens[i] + row - i)
+                    return false;
+                if (qweens[i] - row + i > -1 && col == qweens[i] - row + i)
+                    return false;
             }
+            return true;
+        }
+
+        public static void Newboard(ref int[] board)
+        {
+            for (int i = 0; i < board.Length; i++)
+                board[i] = -1;
         }
     }
 }
