@@ -56,9 +56,9 @@ namespace CodingTest
                 {
                     Hboard[i][j] += 1;
                     Hboard[j][col] += 1;
-                    if (n > Math.Abs(j - col))
-                        Hboard[j][j - col] += 1;
-                    if (n > Math.Abs(col - j))
+                    if (col == j && n > Math.Abs(i - j))
+                        Hboard[j][i-j] += 1;
+                    if (col == j && n > Math.Abs(i - j))
                         Hboard[j][col - j] += 1;
                 }
             }
