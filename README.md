@@ -6,7 +6,7 @@
 ### LV.1
 [달리기 경주](https://school.programmers.co.kr/learn/courses/30/lessons/178871) - HorseRunningRace.cs
 
-#### LV.2
+### LV.2
 [올바른 괄호](https://school.programmers.co.kr/learn/courses/30/lessons/12945) - Correct_Brackets.cs
 
 
