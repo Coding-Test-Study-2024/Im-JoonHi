@@ -1,6 +1,15 @@
 # Im-JoonHi
 임준희 코딩테스트 풀이
 
+## 주차별 현황
+
+### 1주차
+
+- [ ] [BOJ-1388 바닥 장식](https://www.acmicpc.net/problem/1388)
+- [ ] [BOJ-4779 칸토어 집합](https://www.acmicpc.net/problem/4779)
+- [x] [BOJ-11582 치킨 TOP N](https://www.acmicpc.net/problem/9663) - ChickenTopN.cs
+
+
 ## 프로그래머스
 
 ### LV.1
@@ -15,6 +24,3 @@
 ## 백준
 
 [BOJ-9663 N-Queen](https://www.acmicpc.net/problem/9663) - NQween.cs
-
-
-[BOJ-11582 치킨 TOP N](https://www.acmicpc.net/problem/9663) - ChickenTopN.cs
