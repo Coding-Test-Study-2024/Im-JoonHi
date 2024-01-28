@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System.Diagnostics;
+using System.Net.NetworkInformation;
+using System.Text;
 
 namespace CodingTest
 {
@@ -19,7 +21,7 @@ namespace CodingTest
             Console.WriteLine(result);
             */
 
-            // ChickenTopN
+            /* ChickenTopN
             string input = Console.ReadLine();
             int N = int.Parse(input);
             List<int> grade = new List<int>(N);
@@ -30,6 +32,22 @@ namespace CodingTest
             int K = int.Parse(input);
             ChickenTopN.ChickenTOPN(K, N, ref grade);
             Console.WriteLine(string.Join(' ', grade));
+            */
+
+            // 칸토어 집합
+            string input;
+            input = Console.ReadLine();
+            int N = int.Parse(input);
+            while ((input = sr.ReadLine()) != null)
+            {
+                richTextBox1.AppendText(line + Environment.NewLine);
+            }
+            List<char> output = new List<char>();
+            CantorSet.Cantorset(N, -1, ref output);
+            foreach (char c in output)
+                Console.Write(c);
+            Console.WriteLine();
+        }
         }
     }
 }
