@@ -34,17 +34,7 @@ namespace CodingTest
             Console.WriteLine(string.Join(' ', grade));
             */
 
-            // 칸토어 집합
-            /*
-            string input;
-            input = Console.ReadLine();
-            int N = int.Parse(input);
-            List<char> output = new List<char>();
-            CantorSet.Cantorset(N, -1, ref output);
-            foreach (char c in output)
-                Console.Write(c);
-            Console.WriteLine();
-            */
+            /* 칸토어 집합
             StringBuilder sb = new StringBuilder();
 
             string input = Console.ReadLine();
@@ -59,6 +49,7 @@ namespace CodingTest
                 input = Console.ReadLine();
             }
             Console.WriteLine(sb.ToString());
+            */
         }
     }
 }
