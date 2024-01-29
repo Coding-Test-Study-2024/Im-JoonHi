@@ -5,8 +5,8 @@
 
 ### 1주차
 
-- [ ] [BOJ-1388 바닥 장식](https://www.acmicpc.net/problem/1388)
-- [x] [BOJ-4779 칸토어 집합](https://www.acmicpc.net/problem/4779)
+- [x] [BOJ-1388 바닥 장식](https://www.acmicpc.net/problem/1388) - FloorDecoration.cs
+- [x] [BOJ-4779 칸토어 집합](https://www.acmicpc.net/problem/4779) - CantorSet.cs
 - [x] [BOJ-11582 치킨 TOP N](https://www.acmicpc.net/problem/9663) - ChickenTopN.cs
 
 

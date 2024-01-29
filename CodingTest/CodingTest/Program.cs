@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Drawing;
 using System.Net.NetworkInformation;
 using System.Text;
 
@@ -8,7 +9,26 @@ namespace CodingTest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            /* 바닥 장식
+            StringBuilder sb = new StringBuilder();
+
+            string num = Console.ReadLine();
+            string[] splited = num.Split(" ");
+            int N = int.Parse(splited[0]);
+            int M = int.Parse(splited[1]);
+            char[,] floor = new char[N, M];
+
+            int coord = 0;
+            string input = Console.ReadLine();
+            while (!string.IsNullOrEmpty(input))
+            {
+                for (int i = 0; i < input.Length; i++)
+                    floor[coord, i] = input[i];
+                coord++;
+                input = Console.ReadLine();
+            }
+            Console.WriteLine(FloorDecoration.Count(floor));
+            */
 
             /* NQWEEN
             Console.Write("NQween 입력 : ");
