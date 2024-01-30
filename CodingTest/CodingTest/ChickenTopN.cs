@@ -21,7 +21,7 @@ namespace CodingTest
             for (int i = 0; i < K; i++)
             {
                 // List.Sort(QuickSort 시작지점, 시작점으로부터 Sort할 인수 갯수, 소트 방식 (defult 오름차순))
-                // List.Sort는 .Net4 이전은 퀵소트, 인트로 정렬, 현 .Net 8 기준 힙 정렬을 사용한다고 한다.
+                // List.Sort는 .Net4 이전은 퀵 정렬, 인트로 정렬, 현 .Net 8 기준 힙 정렬을 사용한다고 한다.
                 // (MSDN : MicroSoft Developer Network 에서 List.Sort(인수3개) 참조)
 
                 // 치킨집의 갯수 N을 K명이 나눠서 Sort를 진행
@@ -34,9 +34,13 @@ namespace CodingTest
             // for문 안에 있으나 결국 N개의 인수를 정렬한것과 같기에 NlogN으로 수렴
             // N > K
             // K( (N/K)log(N/K) ) = K( N/KlogN - N/KlogK ) = NlogN - NlogK
+            // logN > logK 이기에 logK는 무시
             // => O(NlogN)
 
             // 결국 병합정렬또한 같은 시간복잡도를 가지기에 또같이 NlogN의 시간대를 가지기에 비슷한 시간대의 시간복잡도가 나온다.
+            // (N-K)logN = NlogN (전채를 정렬하는 시간) - KlogN(취소된 정렬이 걸려야할 시간)
+            // (합병단계에서 전체적인 시간을 잡아먹으며, n = 2^k일때 k = log[2]n일떄 nlog[2]n임을 감안하여)
+            // => O(NlogN)
         }
     }
 }
