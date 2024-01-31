@@ -20,16 +20,18 @@ namespace CodingTest
 
             for (int i = 0; i < K; i++)
             {
-                // List.Sort(QuickSort 시작지점, 시작점으로부터 Sort할 인수 갯수, 소트 방식 (defult 오름차순))
-                // List.Sort는 .Net4 이전은 퀵 정렬, 인트로 정렬, 현 .Net 8 기준 힙 정렬을 사용한다고 한다.
-                // (MSDN : MicroSoft Developer Network 에서 List.Sort(인수3개) 참조)
-
                 // 치킨집의 갯수 N을 K명이 나눠서 Sort를 진행
                 grade.Sort(now, N / K, null);
                 
                 // 어디까지 Sort를 했는지 기록 후 진행한 정렬 지점부터 다시 정렬
                 now += N / K;
             }
+            // List.Sort(QuickSort 시작지점, 시작점으로부터 Sort할 인수 갯수, 소트 방식 (defult 오름차순))
+                // List.Sort는 .Net4 이전은 퀵 정렬, 인트로 정렬, 현 .Net 8 기준 힙 정렬을 사용한다고 한다.
+                // (MSDN : MicroSoft Developer Network 에서 List.Sort(인수3개) 참조)
+
+                // 치킨집의 갯수 N을 K명이 나눠서 Sort를 진행
+            
             // 예상되는 시간 복잡도 O(NlogN)
             // for문 안에 있으나 결국 N개의 인수를 정렬한것과 같기에 NlogN으로 수렴
             // N > K
