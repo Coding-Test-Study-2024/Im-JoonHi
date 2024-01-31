@@ -16,7 +16,7 @@ namespace CodingTest
 
         public static void ChickenTOPN(int K, int N, ref List<int> grade) 
         {
-            int now = 0;ㅎ
+            int now = 0;
 
             for (int i = 0; i < K; i++)
             {
