@@ -7,7 +7,7 @@ namespace CodingTest
 {
     internal class Program
     {
-        /*
+        
         static void Main(string[] args)
         {
             string num = Console.ReadLine();
@@ -22,10 +22,12 @@ namespace CodingTest
                 for (int j = 0; j < n; j++)
                     ints[i, j] = int.Parse(Buf[j]);
             }
-            Console.WriteLine(SpecialAward.specialAward(ints, n, 0, 0));
+            Console.WriteLine(SpecialAward.specialAward(ref ints, n, 0, 0));
         }
-        */
+        
 
+        // 색종이 만들기
+        /*
         static void Main(string[] args)
         {
             string num = Console.ReadLine();
@@ -46,5 +48,6 @@ namespace CodingTest
             foreach(int result in output)
                 Console.WriteLine(result);
         }
+        */
     }
 }
