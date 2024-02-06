@@ -7,7 +7,26 @@ namespace CodingTest
 {
     internal class Program
     {
-        
+        static void Main(string[] args)
+        {
+            string num = Console.ReadLine();
+            int n = int.Parse(num);
+
+            Queue<int> ints = new Queue<int>(n);
+            string input = Console.ReadLine();
+            string[] Buf = input.Split(' ');
+            for (int i = 0; i < n; i++)
+                ints.Enqueue(int.Parse(Buf[i]));
+
+            Queue<int> D = new Queue<int>(n);
+            InheritedDisease.inheriteddisese(D, ints, -1, 0, 0, 0);
+
+            for (int i = 0; i < n; i++)
+                Console.Write($"{D.Dequeue()} ");
+        }
+
+        //특별상이라도 받고 싶어
+        /*
         static void Main(string[] args)
         {
             string num = Console.ReadLine();
@@ -24,7 +43,8 @@ namespace CodingTest
             }
             Console.WriteLine(SpecialAward.specialAward(ref ints, n, 0, 0));
         }
-        
+        */
+
 
         // 색종이 만들기
         /*
