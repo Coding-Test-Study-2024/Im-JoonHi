@@ -33,7 +33,13 @@
             if (n == 1)
                 return input[y, x];
             int start = n / 2;
-            int[] buf = new int[] { specialAward(ref input, n / 2, x, y), specialAward(ref input, n / 2, x, y + start), specialAward(ref input, n / 2, x + start, y), specialAward(ref input, n / 2, x + start, y + start) };
+            int[] buf = new int[] 
+            {
+                specialAward(ref input, n / 2, x, y),
+                specialAward(ref input, n / 2, x, y + start),
+                specialAward(ref input, n / 2, x + start, y),
+                specialAward(ref input, n / 2, x + start, y + start)
+            };
             Array.Sort(buf);
             return buf[1];
         }
