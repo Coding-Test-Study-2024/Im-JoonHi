@@ -10,8 +10,8 @@
 - [x] [BOJ-11582 치킨 TOP N](https://www.acmicpc.net/problem/9663) - ChickenTopN.cs
 
 ### 2주차
-- [ ] [BOJ-24460 특별상이라도 받고 싶어](https://www.acmicpc.net/problem/24460) - SpecialAward.cs
-- [ ] [BOJ-2630 색종이 만들기](https://www.acmicpc.net/problem/2630) - 
+- [x] [BOJ-24460 특별상이라도 받고 싶어](https://www.acmicpc.net/problem/24460) - SpecialAward.cs
+- [x] [BOJ-2630 색종이 만들기](https://www.acmicpc.net/problem/2630) - 
 - [ ] [BOJ-10897 Inherited disease](https://www.acmicpc.net/problem/10897) - 
 
 
