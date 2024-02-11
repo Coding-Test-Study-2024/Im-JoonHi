@@ -1,9 +1,4 @@
-﻿using System.Diagnostics;
-using System.Drawing;
-using System.Net.NetworkInformation;
-using System.Text;
-
-namespace CodingTest
+﻿namespace CodingTest
 {
     internal class Program
     {
@@ -27,8 +22,8 @@ namespace CodingTest
             QuadTree.Quadtree(file, n, 0, 0, output);
             Console.WriteLine(output);
         }
-        */
 
+        // 종이의 개수
         static void Main(string[] args)
         {
             string num = Console.ReadLine();
@@ -47,6 +42,11 @@ namespace CodingTest
             NumberOfPapers.Numberofpapers(ints, n, 0, 0, ref output);
             foreach (int result in output)
                 Console.WriteLine(result);
+        }
+        */
+
+        static void Main(string[] args)
+        {
         }
     }
 }
