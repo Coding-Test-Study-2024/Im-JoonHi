@@ -10,9 +10,9 @@ namespace CodingTest
     {
         static void Main1(string[] args)
         {
-            // 1주차
+            /* 1주차
 
-            /* 바닥 장식
+            // 바닥 장식
             StringBuilder sb = new StringBuilder();
 
             string num = Console.ReadLine();
@@ -31,9 +31,8 @@ namespace CodingTest
                 input = Console.ReadLine();
             }
             Console.WriteLine(FloorDecoration.Count(floor));
-            */
 
-            /* ChickenTopN
+            // ChickenTopN
             string input = Console.ReadLine();
             int N = int.Parse(input);
             List<int> grade = new List<int>(N);
@@ -44,9 +43,8 @@ namespace CodingTest
             int K = int.Parse(input);
             ChickenTopN.ChickenTOPN(K, N, ref grade);
             Console.WriteLine(string.Join(' ', grade));
-            */
 
-            /* 칸토어 집합
+            // 칸토어 집합
             StringBuilder sb = new StringBuilder();
 
             string input = Console.ReadLine();
@@ -63,7 +61,75 @@ namespace CodingTest
             Console.WriteLine(sb.ToString());
             */
 
-            // 번외
+            /* 2주차
+
+            // InheritedDisease
+            static void Main(string[] args)
+            {
+                string num = Console.ReadLine();
+                int n = int.Parse(num);
+
+                Queue<int> ints = new Queue<int>(n);
+                string input = Console.ReadLine();
+                string[] Buf = input.Split(' ');
+                for (int i = 0; i < n; i++)
+                    ints.Enqueue(int.Parse(Buf[i]));
+
+                Queue<int> D = new Queue<int>(n);
+                InheritedDisease.inheriteddisese(D, ints, -1, 0, 0, 0);
+
+                for (int i = 0; i < n; i++)
+                    Console.Write($"{D.Dequeue()} ");
+            }
+
+            //특별상이라도 받고 싶어
+            static void Main(string[] args)
+            {
+                string num = Console.ReadLine();
+                int n = int.Parse(num);
+                int[,] ints = new int[n, n];
+
+                string input;
+                for (int i = 0; i < n; i++)
+                {
+                    input = Console.ReadLine();
+                    string[] Buf = input.Split(' ');
+                    for (int j = 0; j < n; j++)
+                        ints[i, j] = int.Parse(Buf[j]);
+                }
+                Console.WriteLine(SpecialAward.specialAward(ref ints, n, 0, 0));
+            }
+
+            // 색종이 만들기
+            static void Main(string[] args)
+            {
+                string num = Console.ReadLine();
+                int n = int.Parse(num);
+                bool[,] paper = new bool[n, n];
+
+                string input;
+                for (int i = 0; i < n; i++)
+                {
+                    input = Console.ReadLine();
+                    string[] Buf = input.Split(' ');
+                    for (int j = 0; j < n; j++)
+                        paper[i, j] = Buf[j] is "1" ? true : false;
+                }
+
+                int[] output = new int[2] { 0, 0 };
+                MakingOrigami.origami(paper, n, 0, 0, ref output);
+                foreach(int result in output)
+                    Console.WriteLine(result);
+            }
+            */
+
+            /* 3주차
+            
+
+
+            */
+
+            /* 번외
 
             /* NQWEEN
             Console.Write("NQween 입력 : ");
