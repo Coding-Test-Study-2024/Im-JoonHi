@@ -1,4 +1,6 @@
-﻿namespace CodingTest
+﻿using System.Text;
+
+namespace CodingTest
 {
     internal class Program
     {
@@ -45,8 +47,16 @@
         }
         */
 
+        // 하노이 탑 이동 순서
         static void Main(string[] args)
         {
+            int n = int.Parse(Console.ReadLine());
+            StringBuilder sw = new StringBuilder();
+
+            // 하노이 탑 최소이동횟수는 2^n - 1
+            sw.AppendLine($"{Math.Pow(2, n) - 1}");
+            HanoiMovementOrder.MoveOrder(sw, n, 1, 2, 3);
+            Console.WriteLine(sw);
         }
     }
 }
