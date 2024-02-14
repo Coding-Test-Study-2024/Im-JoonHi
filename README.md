@@ -14,6 +14,11 @@
 - [x] [BOJ-2630 색종이 만들기](https://www.acmicpc.net/problem/2630) - 
 - [ ] [BOJ-10897 Inherited disease](https://www.acmicpc.net/problem/10897) - 
 
+### 3주차
+- [x] [BOJ-1992 쿼드트리](https://www.acmicpc.net/problem/1992) - QuadTree.cs
+- [x] [BOJ-1780 종이의 개수](https://www.acmicpc.net/problem/1780) - NumberOfPapers.cs
+- [x] [BOJ-11729 하노이 탑 이동 순서](https://www.acmicpc.net/problem/11729) - HanoiMovementOrder.cs
+
 
 ## 프로그래머스
 
