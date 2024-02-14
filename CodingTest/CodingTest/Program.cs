@@ -1,32 +1,31 @@
-﻿using System.Diagnostics;
-using System.Drawing;
-using System.Net.NetworkInformation;
-using System.Text;
+﻿using System.Text;
 
 namespace CodingTest
 {
     internal class Program
     {
+        /* 3주차
+        // 쿼드트리
         static void Main(string[] args)
         {
             string num = Console.ReadLine();
             int n = int.Parse(num);
+            bool[,] file = new bool[n, n];
 
-            Queue<int> ints = new Queue<int>(n);
-            string input = Console.ReadLine();
-            string[] Buf = input.Split(' ');
+            string input;
             for (int i = 0; i < n; i++)
-                ints.Enqueue(int.Parse(Buf[i]));
+            {
+                input = Console.ReadLine();
+                for (int j = 0; j < n; j++)
+                    file[i, j] = input[j] is '1' ? true : false;
+            }
 
-            Queue<int> D = new Queue<int>(n);
-            InheritedDisease.inheriteddisese(D, ints, -1, 0, 0, 0);
-
-            for (int i = 0; i < n; i++)
-                Console.Write($"{D.Dequeue()} ");
+            StringBuilder output = new StringBuilder();
+            QuadTree.Quadtree(file, n, 0, 0, output);
+            Console.WriteLine(output);
         }
 
-        //특별상이라도 받고 싶어
-        /*
+        // 종이의 개수
         static void Main(string[] args)
         {
             string num = Console.ReadLine();
@@ -37,37 +36,27 @@ namespace CodingTest
             for (int i = 0; i < n; i++)
             {
                 input = Console.ReadLine();
-                string[] Buf = input.Split(' ');
+                string[] buf = input.Split(" ");
                 for (int j = 0; j < n; j++)
-                    ints[i, j] = int.Parse(Buf[j]);
+                    ints[i, j] = int.Parse(buf[j]);
             }
-            Console.WriteLine(SpecialAward.specialAward(ref ints, n, 0, 0));
-        }
-        */
-
-
-        // 색종이 만들기
-        /*
-        static void Main(string[] args)
-        {
-            string num = Console.ReadLine();
-            int n = int.Parse(num);
-            bool[,] paper = new bool[n, n];
-
-            string input;
-            for (int i = 0; i < n; i++)
-            {
-                input = Console.ReadLine();
-                string[] Buf = input.Split(' ');
-                for (int j = 0; j < n; j++)
-                    paper[i, j] = Buf[j] is "1" ? true : false;
-            }
-
-            int[] output = new int[2] { 0, 0 };
-            MakingOrigami.origami(paper, n, 0, 0, ref output);
-            foreach(int result in output)
+            int[] output = new int[3] { 0, 0, 0 };
+            NumberOfPapers.Numberofpapers(ints, n, 0, 0, ref output);
+            foreach (int result in output)
                 Console.WriteLine(result);
         }
         */
+
+        // 하노이 탑 이동 순서
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            StringBuilder sw = new StringBuilder();
+
+            // 하노이 탑 최소이동횟수는 2^n - 1
+            sw.AppendLine($"{Math.Pow(2, n) - 1}");
+            HanoiMovementOrder.MoveOrder(sw, n, 1, 2, 3);
+            Console.WriteLine(sw);
+        }
     }
 }
