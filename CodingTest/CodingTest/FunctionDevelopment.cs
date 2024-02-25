@@ -14,7 +14,7 @@ namespace CodingTest
             List<int> answer = new List<int>(progresses.Length);
             int[] prog = progresses;
             int done = 0;
-            bool end = false;
+            bool end = false; 
 
             while (!end)
             {
