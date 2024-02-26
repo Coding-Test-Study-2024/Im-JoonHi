@@ -44,6 +44,7 @@ namespace CodingTest
         */
 
         /*
+        // BOJ-1260 DFS와 BFS
         static void Main(string[] args)
         {
             string num = Console.ReadLine();
@@ -84,19 +85,21 @@ namespace CodingTest
         }
         */
 
+        // BOJ-2210 숫자판 점프
         static void Main(string[] args)
         {
-            int[,] graph = new int[5, 5];
+            List<string> board = new List<string>(25);
             for (int i = 0; i < 5; i++)
             {
                 string input = Console.ReadLine();
                 string[] Buf = input.Split(' ');
-                graph[i,0] = int.Parse(Buf[0]);
-                graph[i,1] = int.Parse(Buf[1]);
-                graph[i,2] = int.Parse(Buf[2]);
-                graph[i,3] = int.Parse(Buf[3]);
-                graph[i,4] = int.Parse(Buf[4]);
+                board.Add(Buf[0]);
+                board.Add(Buf[1]);
+                board.Add(Buf[2]);
+                board.Add(Buf[3]);
+                board.Add(Buf[4]);
             }
+            Console.Write(NumberBoardJump.numboardjump(board.ToArray()));
         }
     }
 }
