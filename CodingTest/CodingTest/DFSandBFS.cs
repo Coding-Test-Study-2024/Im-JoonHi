@@ -8,45 +8,43 @@ namespace CodingTest
 {
     internal class DFSandBFS
     {
-        public static void DFS(in bool[,] graph, int start, out bool[] visited, out int[] parents)
+        public static void DFS(in bool[,] graph, int start, out bool[] visited, out List<int> visitorder)
         {
             visited = new bool[graph.GetLength(0)];
-            parents = new int[graph.GetLength(0)];
+            visitorder = new List<int>(graph.GetLength(0));
 
             for (int i = 0; i < graph.GetLength(0); i++)
             {
                 visited[i] = false;
-                parents[i] = -1;
             }
-
-            SearchNode(graph, start, visited, parents);
+            visited[start] = true;
+            visitorder.Add(start+1);
+            SearchNode(graph, start, visited, visitorder);
         }
 
-        private static void SearchNode(in bool[,] graph, int start, bool[] visited, int[] parents)
+        private static void SearchNode(in bool[,] graph, int start, bool[] visited, List<int> visitorder)
         {
+            if(!visited[start])
+                visitorder.Add(start+1);
             visited[start] = true;
             for (int i = 0; i < graph.GetLength(0); i++)
             {
-                if (graph[start, i] &&
-                    !visited[i])
-                {
-                    parents[i] = start;
-                    SearchNode(graph, i, visited, parents);
-                }
+                if (graph[start, i] && !visited[i])
+                    SearchNode(graph, i, visited, visitorder);
             }
         }
 
-        public static void BFS(in bool[,] graph, int start, out bool[] visited, out int[] parents)
+        public static void BFS(in bool[,] graph, int start, out bool[] visited, out List<int> visitorder)
         {
             visited = new bool[graph.GetLength(0)];
-            parents = new int[graph.GetLength(0)];
+            visitorder = new List<int>(graph.GetLength(0));
 
             for (int i = 0; i < graph.GetLength(0); i++)
             {
                 visited[i] = false;
-                parents[i] = -1;
             }
             visited[start] = true;
+            visitorder.Add(start+1);
 
             Queue<int> bfsQueue = new Queue<int>();
 
@@ -57,11 +55,10 @@ namespace CodingTest
 
                 for (int i = 0; i < graph.GetLength(0); i++)
                 {
-                    if (graph[next, i] &&
-                        !visited[i])
+                    if (graph[next, i] && !visited[i])
                     {
+                        visitorder.Add(i + 1);
                         visited[i] = true;
-                        parents[i] = next;
                         bfsQueue.Enqueue(i);
                     }
                 }

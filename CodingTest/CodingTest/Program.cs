@@ -43,6 +43,7 @@ namespace CodingTest
         }
         */
 
+        /*
         static void Main(string[] args)
         {
             string num = Console.ReadLine();
@@ -63,29 +64,38 @@ namespace CodingTest
                 graph[(int.Parse(Buf2[1])) - 1, (int.Parse(Buf2[0])) - 1] = true;
             }
 
+            bool[] Visited = new bool[graph.GetLength(0)];
+            Array.Fill(Visited, false);
             // DFS 탐색
             bool[] dfsVisited;
-            int[] dfsPath;
-            DFSandBFS.DFS(in graph, start, out dfsVisited, out dfsPath);
-            Console.WriteLine("<DFS>");
-            PrintGraphSearch(dfsVisited, dfsPath);
+            List<int> dfsPath;
+            DFSandBFS.DFS(in graph, start-1, out Visited, out dfsPath);
+            foreach (int numbers in dfsPath)
+                Console.Write($"{numbers} ");
             Console.WriteLine();
 
             // BFS 탐색
-            bool[] bfsVisited;
-            int[] bfsPath;
-            DFSandBFS.BFS(in graph, start, out bfsVisited, out bfsPath);
-            Console.WriteLine("<BFS>");
-            PrintGraphSearch(bfsVisited, bfsPath);
+            Array.Fill(Visited, false);
+            List<int> bfsPath;
+            DFSandBFS.BFS(in graph, start-1, out Visited, out bfsPath);
+            foreach (int numbers in bfsPath)
+                Console.Write($"{numbers} ");
             Console.WriteLine();
         }
-        private static void PrintGraphSearch(bool[] visited, int[] path)
-        {
-            Console.WriteLine($"{"Vertex",8}{"Visit",8}{"Path",8}");
+        */
 
-            for (int i = 0; i < visited.Length; i++)
+        static void Main(string[] args)
+        {
+            int[,] graph = new int[5, 5];
+            for (int i = 0; i < 5; i++)
             {
-                Console.WriteLine($"{i,8}{visited[i],8}{path[i],8}");
+                string input = Console.ReadLine();
+                string[] Buf = input.Split(' ');
+                graph[i,0] = int.Parse(Buf[0]);
+                graph[i,1] = int.Parse(Buf[1]);
+                graph[i,2] = int.Parse(Buf[2]);
+                graph[i,3] = int.Parse(Buf[3]);
+                graph[i,4] = int.Parse(Buf[4]);
             }
         }
     }
