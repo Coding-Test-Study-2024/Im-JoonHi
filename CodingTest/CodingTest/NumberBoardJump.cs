@@ -24,9 +24,10 @@ namespace CodingTest
         {
             if (numbers.Count == 6)
             {
-                string nums = numbers.ToString();
+                string nums = string.Join("",numbers);
                 if (!result.Contains(nums))
                     result.Add(nums);
+                Console.WriteLine(nums);
                 return;
             }
             if ((start - 5) >= 0)
