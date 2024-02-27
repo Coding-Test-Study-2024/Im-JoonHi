@@ -15,7 +15,9 @@ namespace CodingTest
             List<string> result = new List<string>();
             for (int i = 0; i < 25; i++)
             {
+                numbers.Push(board[i]);
                 boardjump(board, ref numbers, ref result, i);
+                numbers.Pop();
             }
             return result.Count;
         }
@@ -28,8 +30,9 @@ namespace CodingTest
                 if (!result.Contains(nums))
                 {
                     result.Add(nums);
-                    Console.WriteLine(nums);
+                    // Console.WriteLine(nums);
                 }
+                Console.WriteLine(nums);
                 return;
             }
             if ((start - 5) >= 0)
@@ -38,19 +41,19 @@ namespace CodingTest
                 boardjump(board, ref numbers, ref result, start -5);
                 numbers.Pop();
             }
-            if ((start + 5) < 24)
+            if ((start + 5) < 25)
             {
                 numbers.Push(board[start + 5]);
                 boardjump(board, ref numbers, ref result, start +5);
                 numbers.Pop();
             }
-            if ((start-1) >= 0)
+            if ((start-1) >= 0 && ((start-1) % 5 != 4))
             {
                 numbers.Push(board[start-1]);
                 boardjump(board, ref numbers, ref result, start -1);
                 numbers.Pop();
             }
-            if ((start+1) < 24)
+            if ((start+1) < 25 && ((start+1) % 5 != 0))
             {
                 numbers.Push(board[start+1]);
                 boardjump(board, ref numbers, ref result, start +1);
