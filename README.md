@@ -19,6 +19,11 @@
 - [x] [BOJ-1780 종이의 개수](https://www.acmicpc.net/problem/1780) - NumberOfPapers.cs
 - [x] [BOJ-11729 하노이 탑 이동 순서](https://www.acmicpc.net/problem/11729) - HanoiMovementOrder.cs
 
+### 5주차
+- [x] [BOJ-2602 바이러스](https://www.acmicpc.net/problem/2606) - Virus.cs
+- [x] [BOJ-1260 DFS와 BFS](https://www.acmicpc.net/problem/1260) - DFSandBFS.cs
+- [x] [BOJ-2210 숫자판 점프](https://www.acmicpc.net/problem/2210) - NumberBoardJump.cs
+
 
 ## 프로그래머스
 
