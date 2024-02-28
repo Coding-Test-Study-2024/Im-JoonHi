@@ -86,7 +86,7 @@ namespace CodingTest
         }
         */
 
-        /*
+        
         // BOJ-2210 숫자판 점프
         static void Main(string[] args)
         {
@@ -103,6 +103,6 @@ namespace CodingTest
             }
             Console.Write(NumberBoardJump.numboardjump(board.ToArray()));
         }
-        */
+        
     }
 }
