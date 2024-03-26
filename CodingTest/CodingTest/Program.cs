@@ -50,5 +50,14 @@
         //BOJ-1052 물병
         static void Main(string[] args)
         {
+            string input = Console.ReadLine();
+            string[] buf = input.Split(" ");
+            int n = int.Parse(buf[0]);
+            int k = int.Parse(buf[1]);
+            if (n <= 10000000 && k <= 1000)
+                Console.WriteLine(WaterBottle.waterbottle(n, k));
+            else
+                Console.WriteLine(-1);
         }
+    }
 }
