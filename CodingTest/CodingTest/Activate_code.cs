@@ -331,6 +331,14 @@ namespace CodingTest
             }
             */
 
+            /* 7주차 
+
+            // PGM-12951 JadenCase 문자열 만들기
+
+            // PGM-12939 최댓값과 최솟값
+
+            */
+
             /* 번외
 
             /* NQWEEN

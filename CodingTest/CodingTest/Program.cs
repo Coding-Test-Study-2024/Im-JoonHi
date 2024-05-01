@@ -5,7 +5,8 @@
 
         /* 7주차 */
 
-        // PGM-12951 JadenCase 문자열 만들기
+        // BOJ-17204 죽음의 게임
+        /*
         static void Main(string[] args)
         {
             string num = Console.ReadLine();
@@ -27,7 +28,36 @@
             input1.Sort(); input2.Sort();
             Console.WriteLine(Treasure.treasure(ref input1, ref input2));
         }
+        */
 
-        // PGM-12939 최댓값과 최솟값
+        // BOJ-1446 지름길
+        static void Main(string[] args)
+        {
+            string num = Console.ReadLine();
+            string[] buf = num.Split(" ");
+            int n = int.Parse(buf[0]);
+            int d = int.Parse(buf[1]);
+
+            List<int> index = new List<int>();
+
+            List<int> input1 = new List<int>(n);
+            List<int> input2 = new List<int>(n);
+            List<int> input3 = new List<int>(n);
+            for (int i = 0; i < n; i++)
+            {
+                num = Console.ReadLine();
+                buf = num.Split(" ");
+                input1.Add(int.Parse(buf[0]));
+                input2.Add(int.Parse(buf[1]));
+                if (input2[i] < d)
+                    if (!index.Contains(input2[i]))
+                        index.Add(input2[i]);
+                input3.Add(int.Parse(buf[1]));
+            }
+            index.Sort();
+
+
+        }
+
     }
 }
