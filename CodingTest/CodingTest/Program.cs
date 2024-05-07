@@ -2,62 +2,39 @@
 {
     internal class Program
     {
+        //8주차
 
-        /* 7주차 */
-
-        // BOJ-17204 죽음의 게임
-        /*
+        // BOJ-5567 결혼식
         static void Main(string[] args)
         {
             string num = Console.ReadLine();
             int n = int.Parse(num);
-            List<int> input1 = new List<int>(n);
-            List<int> input2 = new List<int>(n);
-
-            string input;
-            input = Console.ReadLine();
-            string[] buf = input.Split(" ");
+            num = Console.ReadLine();
+            int m = int.Parse(num);
+            bool[,] graph = new bool[n, n];
             for (int i = 0; i < n; i++)
-                input1.Add(int.Parse(buf[i]));
+                for (int j = 0; j < n; j++)
+                    graph[i, j] = false;
 
-            input = Console.ReadLine();
-            buf = input.Split(" ");
-            for (int i = 0; i < n; i++)
-                input2.Add(int.Parse(buf[i]));
-
-            input1.Sort(); input2.Sort();
-            Console.WriteLine(Treasure.treasure(ref input1, ref input2));
-        }
-        */
-
-        // BOJ-1446 지름길
-        static void Main(string[] args)
-        {
-            string num = Console.ReadLine();
-            string[] buf = num.Split(" ");
-            int n = int.Parse(buf[0]);
-            int d = int.Parse(buf[1]);
-
-            List<int> index = new List<int>();
-
-            List<int> input1 = new List<int>(n);
-            List<int> input2 = new List<int>(n);
-            List<int> input3 = new List<int>(n);
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < m; i++)
             {
-                num = Console.ReadLine();
-                buf = num.Split(" ");
-                input1.Add(int.Parse(buf[0]));
-                input2.Add(int.Parse(buf[1]));
-                if (input2[i] < d)
-                    if (!index.Contains(input2[i]))
-                        index.Add(input2[i]);
-                input3.Add(int.Parse(buf[1]));
+                string input = Console.ReadLine();
+                string[] Buf2 = input.Split(' ');
+                graph[(int.Parse(Buf2[0])) - 1, (int.Parse(Buf2[1])) - 1] = true;
+                graph[(int.Parse(Buf2[1])) - 1, (int.Parse(Buf2[0])) - 1] = true;
             }
-            index.Sort();
 
-
+            bool[] Visited = new bool[graph.GetLength(0)];
+            Array.Fill(Visited, false);
+            List<int> bfsPath;
+            Wedding.DFS(in graph, 0, out Visited, out bfsPath);
+            int result = -1;
+            foreach (bool numbers in Visited)
+                if (numbers)
+                    result++;
+            Console.WriteLine(result);
         }
+
 
     }
 }
